@@ -1,0 +1,143 @@
+// Can you find the needle in the haystack?
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// After your function finds the needle it should return a message (as a string) that says:
+// "found the needle at position " plus the index it found the needle, so:
+// Example(Input --> Output) ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+
+// ANSWER
+function findNeedle(haystack) {
+  for (var i of haystack){
+    return "found the needle at position " + haystack.indexOf("needle");
+  }
+}
+
+//////////////////////////////////////////////////////
+
+
+// Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
+
+// This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
+
+// This function should return a number (final grade). There are four types of final grades:
+
+// 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
+// 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
+// 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
+// 0, in other cases
+// Examples(Inputs-->Output):
+
+// 100, 12 --> 100
+// 99, 0 --> 100
+// 10, 15 --> 100
+// 85, 5 --> 90
+// 55, 3 --> 75
+// 55, 0 --> 0
+// 20, 2 --> 0
+
+// ANSWER
+
+function finalGrade (exam, projects) {
+    return (
+      exam > 90 || projects > 10 ? 100 :
+      exam > 75 && projects >= 7 ? 90 :
+      exam > 50  && projects >= 2 ? 75: 0
+    )
+}
+
+//////////////////////////////////////////////////////
+
+// Given an array of integers, return a new array with each value doubled.
+
+// For example:
+
+// [1, 2, 3] --> [2, 4, 6]
+
+//  ANswer
+
+function maps(x){
+    let newArray = [];
+    for(let i = 0; i < x.length; i++){
+        newArray.push(x[i] * 2);
+    }
+    return newArray;
+}
+
+//////////////////////////////////////////////////////
+
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+    let vowelCount = 0;
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    for(let i of str){
+      if(vowels.includes(i)){
+        vowelCount++
+      }
+    }
+    return vowelCount;
+}
+
+///////////////////////////////////////////////////////
+
+// Given a set of numbers, return the additive inverse of each. Each positive becomes 
+// negatives, and the negatives become positives.
+
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+// You can assume that all values are integers. Do not mutate the input array/list.
+
+function invert(array) {
+  array.forEach((n, index) => {
+      array[index] *= -1;
+   });
+  return array;
+};
+
+//////////////////////////////////////////////////////
+
+// A hero is on his way to the castle to complete his mission. However, he's been told 
+// that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 
+// bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming 
+// he's gonna grab a specific given number of bullets and move forward to fight another specific 
+// given number of dragons, will he survive?
+
+// Return True if yes, False otherwise :)
+
+function hero(bullets, dragons){
+	return bullets >= dragons * 2 ? true : false
+}
+
+////////////////////////////////////////////////////
+
+// Your function takes two arguments:
+
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let twice = dadYearsOld - sonYearsOld * 2;
+  return twice < 0 ? twice * (-1) : twice;
+}
+
+//////////////////////////////////////////////////
+
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+
+// The binary number returned should be a string.
+
+// Examples:(Input1, Input2 --> Output (explanation)))
+
+// 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+// 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in
+
+function addBinary(a,b) {
+  return (a + b).toString(2)
+}
+
+//////////////////////////////////////////////////
