@@ -14,17 +14,16 @@ function findNeedle(haystack) {
 //////////////////////////////////////////////////////
 
 
-// Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
-
-// This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
-
-// This function should return a number (final grade). There are four types of final grades:
-
-// 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
-// 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
-// 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
-// 0, in other cases
-// Examples(Inputs-->Output):
+/* Create a function finalGrade, which calculates the final grade of a student depending on two parameters:
+ a grade for the exam and a number of completed projects.
+ This function should take two arguments: exam - grade for exam (from 0 to 100); projects - 
+ number of completed projects (from 0 and above);
+This function should return a number (final grade). There are four types of final grades:
+100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
+90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
+75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
+0, in other cases
+Examples(Inputs-->Output):
 
 // 100, 12 --> 100
 // 99, 0 --> 100
@@ -32,7 +31,7 @@ function findNeedle(haystack) {
 // 85, 5 --> 90
 // 55, 3 --> 75
 // 55, 0 --> 0
-// 20, 2 --> 0
+// 20, 2 --> 0 */
 
 // ANSWER
 
@@ -106,7 +105,7 @@ function invert(array) {
 // he's gonna grab a specific given number of bullets and move forward to fight another specific 
 // given number of dragons, will he survive?
 
-// Return True if yes, False otherwise :)
+// Return True if yes, False otherwise :) 
 
 function hero(bullets, dragons){
 	return bullets >= dragons * 2 ? true : false
@@ -118,7 +117,8 @@ function hero(bullets, dragons){
 
 // current father's age (years)
 // current age of his son (years)
-// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). 
+// The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
 
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   let twice = dadYearsOld - sonYearsOld * 2;
@@ -171,3 +171,38 @@ function getAge(inputString){
 
 const binaryArrayToNumber = arr => parseInt(arr.join(''), 2)
 
+//////////////////////////////////////////////////
+
+// Write a javascript program to create a new string from a given string
+// taking the first 3 characters and the last 3 characters of a string and 
+// adding them together. The string length must be 3 or more, if Notification, the 
+// original string is returned.
+
+const newString = (str) => str.length < 3 ? str : str.slice(0, 3) + str.slice(-3)
+
+//////////////////////////////////////////////////
+
+// Write a javascript program to extract the first half of a string 
+// of even length 
+
+const firstHalf = (str) => str.slice(0, str.length / 2);
+
+//////////////////////////////////////////////////
+
+// Write a javascript program to concatenate two strings except their first Character.Character
+
+const concatenate = (str1, str2) => str1.slice(0) + str2.slice(0);
+
+//////////////////////////////////////////////////
+
+// Given two values, write a javascript program to find out which one 
+// is nearest to 100
+
+const near100 = (num1, num2) => (100 - num1) < (100 - num2) ? num1 : num2;
+
+//////////////////////////////////////////////////
+
+// Write a javascript program that checks a given string contains 2 to 4 occurrences of a specified character.
+
+const countChars = (str, char) => str.split('').filter(ch => ch === char).length;
+const has2To4 = (str, char) => countChars(str, char) >= 2 && countChars(str, char) <= 4;
