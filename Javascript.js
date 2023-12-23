@@ -154,36 +154,37 @@ function getAge(inputString){
 
 //////////////////////////////////////////////////
 
-// Given an array of ones and zeroes, convert the equivalent binary value to an integer.
-// Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+/*
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
 
-// Examples:
+Examples:
 
-// Testing: [0, 0, 0, 1] ==> 1
-// Testing: [0, 0, 1, 0] ==> 2
-// Testing: [0, 1, 0, 1] ==> 5
-// Testing: [1, 0, 0, 1] ==> 9
-// Testing: [0, 0, 1, 0] ==> 2
-// Testing: [0, 1, 1, 0] ==> 6
-// Testing: [1, 1, 1, 1] ==> 15
-// Testing: [1, 0, 1, 1] ==> 11
-// However, the arrays can have varying lengths, not just limited to 4.
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11
+However, the arrays can have varying lengths, not just limited to 4. */
 
 const binaryArrayToNumber = arr => parseInt(arr.join(''), 2)
 
 //////////////////////////////////////////////////
 
-// Write a javascript program to create a new string from a given string
-// taking the first 3 characters and the last 3 characters of a string and 
-// adding them together. The string length must be 3 or more, if Notification, the 
-// original string is returned.
+/* 
+Write a javascript program to create a new string from a given string
+taking the first 3 characters and the last 3 characters of a string and 
+adding them together. The string length must be 3 or more, if Notification, the 
+original string is returned. */
 
 const newString = (str) => str.length < 3 ? str : str.slice(0, 3) + str.slice(-3)
 
 //////////////////////////////////////////////////
 
-// Write a javascript program to extract the first half of a string 
-// of even length 
+// Write a javascript program to extract the first half of a string of even length 
 
 const firstHalf = (str) => str.slice(0, str.length / 2);
 
@@ -195,8 +196,7 @@ const concatenate = (str1, str2) => str1.slice(0) + str2.slice(0);
 
 //////////////////////////////////////////////////
 
-// Given two values, write a javascript program to find out which one 
-// is nearest to 100
+// Given two values, write a javascript program to find out which one is nearest to 100
 
 const near100 = (num1, num2) => (100 - num1) < (100 - num2) ? num1 : num2;
 
@@ -206,3 +206,47 @@ const near100 = (num1, num2) => (100 - num1) < (100 - num2) ? num1 : num2;
 
 const countChars = (str, char) => str.split('').filter(ch => ch === char).length;
 const has2To4 = (str, char) => countChars(str, char) >= 2 && countChars(str, char) <= 4;
+
+//////////////////////////////////////////////////
+
+/*
+You might know some pretty large perfect squares. But what about the NEXT one?
+
+Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+
+If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+
+Examples:(Input --> Output)
+
+121 --> 144
+625 --> 676
+114 --> -1 since 114 is not a perfect square */
+
+function findNextSquare(sq){
+  if(Math.sqrt(sq) % 1 == 0){
+    return (Math.sqrt(sq)+1)**2
+  } else{
+    return -1
+  }
+}
+                            // OR
+
+const findNextSquare = (sq) => Math.sqrt(sq) % 1 == 0 ? (Math.sqrt(sq) + 1)**2 : -1 
+
+
+///////////////////////////////
+
+/* Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321 */
+
+function descendingOrder(n){
+  // Convert the number to a string, split its digits, sort them in descending order, and join back
+ return parseInt(String(n).split("").sort((a,b) => (b - a)).join(""))
+}
+
