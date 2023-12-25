@@ -231,22 +231,37 @@ function findNextSquare(sq){
 }
                             // OR
 
-const findNextSquare = (sq) => Math.sqrt(sq) % 1 == 0 ? (Math.sqrt(sq) + 1)**2 : -1 
+const findNextSquare = (sq) => Math.sqrt(sq) % 1 == 0 ? (Math.sqrt(sq) + 1)**2 : -1
 
 
-///////////////////////////////
+///////////////////////////////////
 
-/* Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+/*
 
-Examples:
-Input: 42145 Output: 54421
+Count the number of Duplicates
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 
-Input: 145263 Output: 654321
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+"indivisibility" -> 1 # 'i' occurs six times
+"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+"aA11" -> 2 # 'a' and '1'
+"ABBA" -> 2 # 'A' and 'B' each occur twice
 
-Input: 123456789 Output: 987654321 */
+*/
 
-function descendingOrder(n){
-  // Convert the number to a string, split its digits, sort them in descending order, and join back
- return parseInt(String(n).split("").sort((a,b) => (b - a)).join(""))
+function duplicateCount(text){
+  const lowerCase = text.toLowerCase();
+  const char = {};
+  
+  for (var strings of lowerCase) {
+    if (/[a-z0-9]/.test(strings)) {
+      char[strings] = (char[strings] || 0) + 1;
+    }
+  }
+  const countChars = Object.values(char).filter(count => count > 1).length;
+  
+  return countChars;
 }
-
