@@ -22,13 +22,6 @@ def solution(number):
         return 0
     
     sum = 0
-
-
-    """
-Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
-
-Your task is to write a function maskify, which changes all but the last four characters into '#'.
-"""
     
     for i in range(number):
         # Check if the number is a multiple of 3 or 5
@@ -86,3 +79,22 @@ def better_than_average(class_points, your_points):
     return your_points > sum(class_points) / len(class_points) 
 
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+"""
+Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+
+Your task is to write a function maskify, which changes all but the last four characters into '#'.
+"""
+
+def maskify(cc: str) -> str:
+    """
+    Masks all but the last four characters of a string with '#'.
+    Args:
+        cc (str): The input string (e.g., credit card number).
+    Returns:
+        str: The masked string.
+    """
+    return '#' * (len(cc) - 4) + cc[-4:]
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
