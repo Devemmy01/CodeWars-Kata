@@ -122,3 +122,25 @@ def get_sum(a,b):
         return sum(range(a, b + 1))
     else:
         return sum(range(b, a + 1))
+    
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+"""
+You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+Note: if there is nothing to sum, the sum is default to 0.
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+def positive_sum(arr):
+    sum_of_positive = 0
+    for i in arr:
+        if i > 0:
+            sum_of_positive += i
+    return sum_of_positive
+
+# OR
+
+def positive_sum(arr):
+    return sum(i for i in arr if i > 0)
