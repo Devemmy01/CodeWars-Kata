@@ -158,3 +158,37 @@ def greet():
 
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     
+"""
+A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+def is_pangram(s):
+    alphabets = ('abcdefghijklmnopqrstuvwxyz')
+    s_lower = s.lower()
+    for i in alphabets:
+        if i not in s_lower:
+            return False
+    return True
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+"""
+Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.
+
+For example (Input -> Output):
+
+2 -> 3 (1 + 2)
+8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+def summation(num):
+    return sum(range(1, num + 1))
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
