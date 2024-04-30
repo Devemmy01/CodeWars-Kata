@@ -144,3 +144,17 @@ def positive_sum(arr):
 
 def positive_sum(arr):
     return sum(i for i in arr if i > 0)
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+"""
+Make a simple function called greet that returns the most-famous "hello world!".   
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+def greet():
+    return "hello world!"
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
