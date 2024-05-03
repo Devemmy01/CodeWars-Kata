@@ -226,4 +226,46 @@ def count_bits(n):
 
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     
+"""
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+"Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+
+isIsogram "Dermatoglyphics" = true
+isIsogram "moose" = false
+isIsogram "aba" = false
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     
+def is_isogram(string):
+    # Convert the string to lowercase to ignore letter case
+    lower_case_string = string.lower()
+    # Create a set to store the unique letters encountered
+    unique_letters = set()
+    # Iterate through each character in the lowercase string
+    for _ in lower_case_string:
+        # Check if the character is a letter
+        if _.isalpha():
+            # If the character is already in the set, return False
+            if _ in unique_letters:
+                return False
+            # Otherwise, add the character to the set
+            else:
+                unique_letters.add(_)
+    return True
+
+# OR
+
+def is_isogram(string):
+    return len(string) == len(set(string.lower()))
+
+# OR
+
+def is_isogram(string):
+    string = string.lower()
+    for letter in string:
+        if string.count(letter) > 1: return False
+    return True
