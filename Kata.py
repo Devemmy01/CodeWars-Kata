@@ -475,3 +475,19 @@ def abbrev_name(name):
     cap_first_letters = [i[0].upper() for i in words]
     initial = '.'.join(cap_first_letters)
     return initial
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+"""
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+"""
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+def grow(arr):
+    result = 1
+    for i in arr:
+        result *= i
+    return result
