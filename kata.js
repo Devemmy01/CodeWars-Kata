@@ -320,3 +320,47 @@ const isSquare = (n) => {
   // If the square root of the number is an integer, it's a perfect square
   return Math.sqrt(n) % 1 === 0
 }
+
+
+/*
+
+Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+Examples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+""  -->  ""
+
+*/
+// Function to sort words based on the position number in the string
+function order(words) {
+  // I check if the input string is empty
+  if (words === "") {
+    return "";
+  }
+  
+  // I split the string into an array of words
+  const wordArr = words.split(" ");
+  // I create an empty array to store the result
+  const sortedArr = [];
+  
+  // I iterate through numbers from 1 to 9
+  for (let i = 1; i <= 9; i++) {
+    // I iterate through each word in the array
+    for (let j = 0; j < wordArr.length; j++) {
+      // Then check if the word contains the current number
+      if (wordArr[j].includes(i)) {
+        // Add the word to the sorted array
+        sortedArr.push(wordArr[j]);
+      }
+    }
+  }
+  
+  // Then finally Join the sorted array of words into a string
+  return sortedArr.join(" ");
+}
+
