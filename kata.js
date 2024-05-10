@@ -454,3 +454,13 @@ function repeatStr (n, s) {
   return s + repeatStr(n - 1, s)
 }
 
+// OR
+
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+// OR
+
+repeatStr = (n, s) => s.repeat(n)
+
