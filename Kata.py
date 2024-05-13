@@ -606,3 +606,8 @@ def make_negative( number ):
     if number > 0:
         return -number
     return number
+
+# OR
+
+def make_negative( number ):
+    return -abs(number)
