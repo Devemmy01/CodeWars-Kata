@@ -573,3 +573,15 @@ function makeNegative(num) {
   
   return num
 }
+
+// OR
+
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+
+// OR
+
+function makeNegative(num) {
+  return num < 0 ? num : -num;
+}
