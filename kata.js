@@ -623,3 +623,6 @@ const quarterOf = (month) => {
  return quarter;
 }
 
+// OR
+
+const quarter_Of = m => Math.ceil(m/3);
