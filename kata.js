@@ -797,3 +797,9 @@ function bonusTime(salary, bonus) {
   const currencySymbol = "\u00A3"; // £ symbol in Unicode
   return `${currencySymbol}${total}`;
 }
+
+// OR
+
+function bonusTime(salary, bonus) {
+  return bonus ? `£${10 * salary}` : `£${salary}`;
+}
