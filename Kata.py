@@ -816,3 +816,8 @@ def bonus_time(salary, bonus):
     
     # Return the total amount as a string prefixed with the currency symbol
     return f"{currency_symbol}{total}"
+
+# OR
+
+def bonus_time(salary, bonus):
+    return "${}".format(salary * (10 if bonus else 1))
