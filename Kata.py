@@ -858,3 +858,9 @@ def area_or_perimeter(l , w):
         return l * w  # Area of the square
     else:
         return 2 * (l + w)  # Perimeter of the rectangle
+
+
+# OR
+
+def area_or_perimeter(l, w):
+    return l * w if l == w else (l + w) * 2
