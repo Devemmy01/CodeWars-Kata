@@ -843,3 +843,7 @@ const areaOrPerimeter = function(l , w) {
         return 2 * (l + w);  // Perimeter of the rectangle
     }
 };
+
+// OR
+
+return l == w ? l*w : 2*(l + w)
