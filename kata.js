@@ -2,17 +2,16 @@
 // Write a function findNeedle() that takes an array full of junk but containing one "needle"
 // After your function finds the needle it should return a message (as a string) that says:
 // "found the needle at position " plus the index it found the needle, so:
-// Example(Input --> Output) ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+// Example(Input --> Output) ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
 
 // ANSWER
 function findNeedle(haystack) {
-  for (var i of haystack){
+  for (var i of haystack) {
     return "found the needle at position " + haystack.indexOf("needle");
   }
 }
 
 //////////////////////////////////////////////////////
-
 
 /* Create a function finalGrade, which calculates the final grade of a student depending on two parameters:
  a grade for the exam and a number of completed projects.
@@ -35,12 +34,14 @@ Examples(Inputs-->Output):
 
 // ANSWER
 
-function finalGrade (exam, projects) {
-    return (
-      exam > 90 || projects > 10 ? 100 :
-      exam > 75 && projects >= 7 ? 90 :
-      exam > 50  && projects >= 2 ? 75: 0
-    )
+function finalGrade(exam, projects) {
+  return exam > 90 || projects > 10
+    ? 100
+    : exam > 75 && projects >= 7
+    ? 90
+    : exam > 50 && projects >= 2
+    ? 75
+    : 0;
 }
 
 //////////////////////////////////////////////////////
@@ -53,12 +54,12 @@ function finalGrade (exam, projects) {
 
 //  ANswer
 
-function maps(x){
-    let newArray = [];
-    for(let i = 0; i < x.length; i++){
-        newArray.push(x[i] * 2);
-    }
-    return newArray;
+function maps(x) {
+  let newArray = [];
+  for (let i = 0; i < x.length; i++) {
+    newArray.push(x[i] * 2);
+  }
+  return newArray;
 }
 
 //////////////////////////////////////////////////////
@@ -70,19 +71,19 @@ function maps(x){
 // The input string will only consist of lower case letters and/or spaces.
 
 function getCount(str) {
-    let vowelCount = 0;
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    for(let i of str){
-      if(vowels.includes(i)){
-        vowelCount++
-      }
+  let vowelCount = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i of str) {
+    if (vowels.includes(i)) {
+      vowelCount++;
     }
-    return vowelCount;
+  }
+  return vowelCount;
 }
 
 ///////////////////////////////////////////////////////
 
-// Given a set of numbers, return the additive inverse of each. Each positive becomes 
+// Given a set of numbers, return the additive inverse of each. Each positive becomes
 // negatives, and the negatives become positives.
 
 // invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
@@ -92,23 +93,23 @@ function getCount(str) {
 
 function invert(array) {
   array.forEach((n, index) => {
-      array[index] *= -1;
-   });
+    array[index] *= -1;
+  });
   return array;
-};
+}
 
 //////////////////////////////////////////////////////
 
-// A hero is on his way to the castle to complete his mission. However, he's been told 
-// that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 
-// bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming 
-// he's gonna grab a specific given number of bullets and move forward to fight another specific 
+// A hero is on his way to the castle to complete his mission. However, he's been told
+// that the castle is surrounded with a couple of powerful dragons! each dragon takes 2
+// bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming
+// he's gonna grab a specific given number of bullets and move forward to fight another specific
 // given number of dragons, will he survive?
 
-// Return True if yes, False otherwise :) 
+// Return True if yes, False otherwise :)
 
-function hero(bullets, dragons){
-	return bullets >= dragons * 2 ? true : false
+function hero(bullets, dragons) {
+  return bullets >= dragons * 2 ? true : false;
 }
 
 ////////////////////////////////////////////////////
@@ -117,12 +118,12 @@ function hero(bullets, dragons){
 
 // current father's age (years)
 // current age of his son (years)
-// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). 
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
 // The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
 
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   let twice = dadYearsOld - sonYearsOld * 2;
-  return twice < 0 ? twice * (-1) : twice;
+  return twice < 0 ? twice * -1 : twice;
 }
 
 //////////////////////////////////////////////////
@@ -136,8 +137,8 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 // 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
 // 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in
 
-function addBinary(a,b) {
-  return (a + b).toString(2)
+function addBinary(a, b) {
+  return (a + b).toString(2);
 }
 
 //////////////////////////////////////////////////
@@ -148,8 +149,8 @@ function addBinary(a,b) {
 
 // Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
 
-function getAge(inputString){
-	return parseInt(inputString)
+function getAge(inputString) {
+  return parseInt(inputString);
 }
 
 //////////////////////////////////////////////////
@@ -170,7 +171,7 @@ Testing: [1, 1, 1, 1] ==> 15
 Testing: [1, 0, 1, 1] ==> 11
 However, the arrays can have varying lengths, not just limited to 4. */
 
-const binaryArrayToNumber = arr => parseInt(arr.join(''), 2)
+const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
 
 //////////////////////////////////////////////////
 
@@ -180,11 +181,12 @@ taking the first 3 characters and the last 3 characters of a string and
 adding them together. The string length must be 3 or more, if Notification, the 
 original string is returned. */
 
-const newString = (str) => str.length < 3 ? str : str.slice(0, 3) + str.slice(-3)
+const newString = (str) =>
+  str.length < 3 ? str : str.slice(0, 3) + str.slice(-3);
 
 //////////////////////////////////////////////////
 
-// Write a javascript program to extract the first half of a string of even length 
+// Write a javascript program to extract the first half of a string of even length
 
 const firstHalf = (str) => str.slice(0, str.length / 2);
 
@@ -198,14 +200,16 @@ const concatenate = (str1, str2) => str1.slice(0) + str2.slice(0);
 
 // Given two values, write a javascript program to find out which one is nearest to 100
 
-const near100 = (num1, num2) => (100 - num1) < (100 - num2) ? num1 : num2;
+const near100 = (num1, num2) => (100 - num1 < 100 - num2 ? num1 : num2);
 
 //////////////////////////////////////////////////
 
 // Write a javascript program that checks a given string contains 2 to 4 occurrences of a specified character.
 
-const countChars = (str, char) => str.split('').filter(ch => ch === char).length;
-const has2To4 = (str, char) => countChars(str, char) >= 2 && countChars(str, char) <= 4;
+const countChars = (str, char) =>
+  str.split("").filter((ch) => ch === char).length;
+const has2To4 = (str, char) =>
+  countChars(str, char) >= 2 && countChars(str, char) <= 4;
 
 //////////////////////////////////////////////////
 
@@ -222,17 +226,17 @@ Examples:(Input --> Output)
 625 --> 676
 114 --> -1 since 114 is not a perfect square */
 
-function findNextSquare(sq){
-  if(Math.sqrt(sq) % 1 == 0){
-    return (Math.sqrt(sq)+1)**2
-  } else{
-    return -1
+function findNextSquare(sq) {
+  if (Math.sqrt(sq) % 1 == 0) {
+    return (Math.sqrt(sq) + 1) ** 2;
+  } else {
+    return -1;
   }
 }
-                            // OR
+// OR
 
-const findNextSquare = (sq) => Math.sqrt(sq) % 1 == 0 ? (Math.sqrt(sq) + 1)**2 : -1
-
+const findNextSquare = (sq) =>
+  Math.sqrt(sq) % 1 == 0 ? (Math.sqrt(sq) + 1) ** 2 : -1;
 
 ///////////////////////////////////
 
@@ -252,17 +256,17 @@ Example
 
 */
 
-function duplicateCount(text){
+function duplicateCount(text) {
   const lowerCase = text.toLowerCase();
   const char = {};
-  
+
   for (var strings of lowerCase) {
     if (/[a-z0-9]/.test(strings)) {
       char[strings] = (char[strings] || 0) + 1;
     }
   }
-  const countChars = Object.values(char).filter(count => count > 1).length;
-  
+  const countChars = Object.values(char).filter((count) => count > 1).length;
+
   return countChars;
 }
 
@@ -281,12 +285,28 @@ Note: For 4 or more names, the number in "and 2 others" simply increases.
 
 function likes(names) {
   names = names || [];
-  switch(names.length){
-      case 0: return 'no one likes this'; break;
-      case 1: return names[0] + ' likes this'; break;
-      case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
-      case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
-      default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2 ) + ' others like this';
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+      break;
+    case 1:
+      return names[0] + " likes this";
+      break;
+    case 2:
+      return names[0] + " and " + names[1] + " like this";
+      break;
+    case 3:
+      return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+      break;
+    default:
+      return (
+        names[0] +
+        ", " +
+        names[1] +
+        " and " +
+        (names.length - 2) +
+        " others like this"
+      );
   }
 }
 
@@ -318,9 +338,8 @@ Examples
 
 const isSquare = (n) => {
   // If the square root of the number is an integer, it's a perfect square
-  return Math.sqrt(n) % 1 === 0
-}
-
+  return Math.sqrt(n) % 1 === 0;
+};
 
 /*
 
@@ -342,12 +361,12 @@ function order(words) {
   if (words === "") {
     return "";
   }
-  
+
   // I split the string into an array of words
   const wordArr = words.split(" ");
   // I create an empty array to store the result
   const sortedArr = [];
-  
+
   // I iterate through numbers from 1 to 9
   for (let i = 1; i <= 9; i++) {
     // I iterate through each word in the array
@@ -359,11 +378,10 @@ function order(words) {
       }
     }
   }
-  
+
   // Then finally Join the sorted array of words into a string
   return sortedArr.join(" ");
 }
-
 
 /*
 Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.
@@ -377,7 +395,7 @@ Examples
 
 */
 
-function toCamelCase(str){
+function toCamelCase(str) {
   if (!text) return "";
 
   // Check if the first character is uppercase
@@ -387,7 +405,9 @@ function toCamelCase(str){
   const firstWord = isFirstWordUpper ? text[0] : text[0].toLowerCase();
 
   // Replace delimiters and capitalize following characters in remaining words
-  const remainingWords = text.slice(1).replace(/[-_](.)/g, (match, group1) => group1.toUpperCase());
+  const remainingWords = text
+    .slice(1)
+    .replace(/[-_](.)/g, (match, group1) => group1.toUpperCase());
 
   // Combine the first word and converted remaining words
   return firstWord + remainingWords;
@@ -399,8 +419,8 @@ Implement a function which convert the given boolean value into its string repre
 Note: Only valid inputs will be given.
 */
 
-function booleanToString(b){
-  return b.toString()
+function booleanToString(b) {
+  return b.toString();
 }
 
 /*
@@ -416,8 +436,8 @@ friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
 Note: keep the original order of the names in the output.
 */
 
-function friend(friends){
-  return friends.filter((i) => i.length == 4)
+function friend(friends) {
+  return friends.filter((i) => i.length == 4);
 }
 
 /*
@@ -428,14 +448,14 @@ Return the average of the given array rounded down to its nearest integer.
 The array will never be empty.
 */
 
-function getAverage(marks){
-  if (!marks.length) return null
-  
-  const totalSum = marks.reduce((sum, num) => sum + num , 0)
-  
-  const average = Math.floor(totalSum / marks.length)
-  
-  return average
+function getAverage(marks) {
+  if (!marks.length) return null;
+
+  const totalSum = marks.reduce((sum, num) => sum + num, 0);
+
+  const average = Math.floor(totalSum / marks.length);
+
+  return average;
 }
 
 /*
@@ -446,23 +466,23 @@ Examples (input -> output)
 5, "Hello" -> "HelloHelloHelloHelloHello"
 */
 
-function repeatStr (n, s) {
-  if (n < 0 || !s) return ""
-  
-  if (n === 0) return ""
-  
-  return s + repeatStr(n - 1, s)
+function repeatStr(n, s) {
+  if (n < 0 || !s) return "";
+
+  if (n === 0) return "";
+
+  return s + repeatStr(n - 1, s);
 }
 
 // OR
 
-function repeatStr (n, s) {
+function repeatStr(n, s) {
   return s.repeat(n);
 }
 
 // OR
 
-repeatStr = (n, s) => s.repeat(n)
+repeatStr = (n, s) => s.repeat(n);
 
 /*
 Create a function with two arguments that will return an array of the first n multiples of x.
@@ -478,8 +498,8 @@ countBy(2,5) === [2,4,6,8,10]
 
 function countBy(x, n) {
   let z = [];
-  for (let i = 1; i <= n; i++ ){
-    z.push(x * i)
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i);
   }
 
   return z;
@@ -496,7 +516,7 @@ Examples:
 */
 
 function opposite(number) {
-  return -number
+  return -number;
 }
 
 /*
@@ -506,12 +526,11 @@ P.S. Each array includes only integer numbers. Output is a number too.
 */
 
 function arrayPlusArray(arr1, arr2) {
-  
-  const spread = [...arr1, ...arr2]
-  
-  const sum = spread.reduce((acc, num) => acc + num , 0)
-  
-  return sum; 
+  const spread = [...arr1, ...arr2];
+
+  const sum = spread.reduce((acc, num) => acc + num, 0);
+
+  return sum;
 }
 
 // OR
@@ -539,13 +558,13 @@ You cannot assume the size of the array.
 You can assume that you do get an array and if the array is empty, return 0.
 */
 
-function sum (numbers) {
-  let sum = 0
-  for (let i = 0; i < numbers.length; i++){
-    sum += numbers[i]
+function sum(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
   }
-return sum
-};
+  return sum;
+}
 
 // OR
 
@@ -567,11 +586,11 @@ Zero (0) is not checked for any specific sign. Negative zeros make no mathematic
 */
 
 function makeNegative(num) {
-  if (num > 0){
-    return -num
+  if (num > 0) {
+    return -num;
   }
-  
-  return num
+
+  return num;
 }
 
 // OR
@@ -591,18 +610,18 @@ Create a function that takes an integer as an argument and returns "Even" for ev
 */
 
 function evenOrOdd(number) {
-  if (number % 2 == 0){
-    return "Even"
-  } else{
-    return "Odd"
+  if (number % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
   }
 }
 
 // OR
 
 function evenOrOdd(number) {
-  return number % 2 === 0 ? 'Even' : 'Odd';
-} 
+  return number % 2 === 0 ? "Even" : "Odd";
+}
 
 /*
 Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
@@ -616,16 +635,16 @@ Constraint:
 
 const quarterOf = (month) => {
   if (month < 1 || month > 12) {
-   throw new Error("Invalid month. Month must be between 1 and 12.");
- }
+    throw new Error("Invalid month. Month must be between 1 and 12.");
+  }
 
- const quarter = Math.ceil(month / 3);
- return quarter;
-}
+  const quarter = Math.ceil(month / 3);
+  return quarter;
+};
 
 // OR
 
-const quarter_Of = m => Math.ceil(m/3);
+const quarter_Of = (m) => Math.ceil(m / 3);
 
 /*
 Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
@@ -638,7 +657,7 @@ n=-5, m=5:  0
 */
 
 function paperwork(n, m) {
-  return n < 0 || m < 0 ? 0 : n * m 
+  return n < 0 || m < 0 ? 0 : n * m;
 }
 
 /*
@@ -746,10 +765,10 @@ function SeriesSum(n) {
 
 function SeriesSum(n) {
   for (var s = 0, i = 0; i < n; i++) {
-    s += 1 / (1 + i * 3)
+    s += 1 / (1 + i * 3);
   }
-  
-  return s.toFixed(2)
+
+  return s.toFixed(2);
 }
 
 /*
@@ -821,7 +840,7 @@ For example 2 is not a factor of 7 because: 7 % 2 = 1
 Note: base is a non-negative number, factor is a positive number.
 */
 
-function checkForFactor (base, factor) {
+function checkForFactor(base, factor) {
   return base % factor === 0;
 }
 
@@ -836,14 +855,14 @@ Example(Input1, Input2 --> Output):
 Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
 */
 
-const areaOrPerimeter = function(l , w) {
+const areaOrPerimeter = function (l, w) {
   if (l === w) {
-        return l * w;  // Area of the square
-    } else {
-        return 2 * (l + w);  // Perimeter of the rectangle
-    }
+    return l * w; // Area of the square
+  } else {
+    return 2 * (l + w); // Perimeter of the rectangle
+  }
 };
 
 // OR
 
-return l == w ? l*w : 2*(l + w)
+return l == w ? l * w : 2 * (l + w);
